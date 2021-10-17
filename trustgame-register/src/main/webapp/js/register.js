@@ -1,22 +1,22 @@
-/* submit score form with selected game */
+/* submit register form with selected game */
 function submitSelectGame() {
   document.getElementById("clickType").setAttribute("value", "game");
   document.getElementById("recordNr").setAttribute("value", document.getElementById("game").value);
-  document.getElementById("scoreForm").submit();
+  document.getElementById("registerForm").submit();
 }
 
-/* submit score form with selected gameplay */
+/* submit register form with selected gameplay */
 function submitSelectGamePlay() {
   document.getElementById("clickType").setAttribute("value", "gamePlay");
   document.getElementById("recordNr").setAttribute("value", document.getElementById("gamePlay").value);
-  document.getElementById("scoreForm").submit();
+  document.getElementById("registerForm").submit();
 }
 
-/* submit score form with selected game user */
+/* submit register form with selected game user */
 function submitSelectGameUser(recordNr) {
   document.getElementById("clickType").setAttribute("value", "gameUser");
   document.getElementById("recordNr").setAttribute("value", recordNr);
-  document.getElementById("scoreForm").submit();
+  document.getElementById("registerForm").submit();
 }
 
 /* create the preview for the image when a file is selected */

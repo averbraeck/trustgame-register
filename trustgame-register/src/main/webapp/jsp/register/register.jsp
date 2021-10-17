@@ -52,8 +52,8 @@
             aim to explore the influence of trust on technology-mediated collaborations. 
           </p>
           <p> 
-            This score overview has been tested with the latest versions of <b>Chrome</b>, <b>Firefox</b> and <b>Edge</b>. 
-            The score panel works best on a HD screen with a resolution of 1920 x 1080 pixels, and has <b>not</b> been
+            This self registration app has been tested with the latest versions of <b>Chrome</b>, <b>Firefox</b> and <b>Edge</b>. 
+            The self registration works best on a HD screen with a resolution of 1920 x 1080 pixels, and has <b>not</b> been
             designed for a mobile phone.
           </p>
           <p> 
@@ -68,7 +68,7 @@
     
     <!-- modal window for the client information within an order -->
     
-    ${scoreData.getModalWindowHtml()}
+    ${registerData.getModalWindowHtml()}
 
     <form id="clickForm" action="/trustgame-register/register" method="POST" style="display:none;">
       <input id="click" type="hidden" name="click" value="tobefilled" />

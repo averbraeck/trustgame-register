@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
   version="4.0">
 
-  <display-name>TransSonic TrustGame Scores Application</display-name>
+  <display-name>TransSonic TrustGame Self Registration Application</display-name>
 
   <servlet>
     <servlet-name>trustgame-register</servlet-name>
