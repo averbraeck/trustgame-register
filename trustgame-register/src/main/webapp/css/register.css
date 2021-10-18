@@ -2,6 +2,157 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.tg-register-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  min-height: 0px;
+}
+
+.tg-header, .tg-body, .tg-footer {
+  flex-shrink: 0;
+}
+
+.tg-register-header {
+  background: navy;
+  padding: 5px;
+  height: 50px;
+  text-align: left;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.tg-register-header-right {
+  position: absolute;
+  background: white;
+  margin: 2px;
+  height: 46px;
+  width: 300px;
+  right: 20px;
+  border-radius: 20px;
+  flex-direction: row;
+}
+
+.tg-register-header-right > img {
+  margin-left: 20px;
+  margin-top: 3px;
+  height: 40px;
+  width: auto;
+}
+
+.tg-register-body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 0;
+  height: calc(100vh - 200px);
+  width: 600px;
+  margin-left: calc(50vw - 300px);
+  padding-right: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tg-register-footer {
+  background: navy;
+  padding: 5px;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: right;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.tg-register-top-message {
+  font-style: normal;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.tg-register-top-message > h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8em;
+  text-align: center;
+  color: orange;
+}
+
+.tg-register-top-message > p {
+  text-align: justify;
+  line-height: 1.2;
+}
+
+.tg-register-bottom-message {
+  font-style: normal;
+  font-size: 0.8em;
+  margin-top: 20px;
+}
+
+.tg-register-bottom-message > p {
+  text-align: justify;
+  line-height: 1.2;
+}
+
+.tg-register {
+  border: 3px solid orange;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tg-form {
+  width:100%;  
+}
+
+.tg-form fieldset {
+  display: block;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  border: none;
+}
+
+.tg-form fieldset table {
+  border: none;
+}
+
+.tg-form fieldset tr {
+  border: none;
+}
+
+.tg-form fieldset td {
+  border: none;
+}
+
+.tg-register-button {
+  display: block;
+  width: 99%;
+  border: none;
+  background-color: orange;
+  padding: 14px 28px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
 .tg-button-small {
   display: block;
   flex-grow: 0;
@@ -50,7 +201,7 @@ html, body {
   color: white;
   font-weight: bold;
   font-size: 2em;
-  margin-left: 420px;
+  text-align: center;
   display: inline;
 }
 
@@ -177,132 +328,6 @@ html, body {
   font-size: 0.7em;
   color: white;
   font-style: normal;
-}
-
-/* ======================= */
-/* MAIN BODY OF THE SCREEN */
-/* ======================= */
-
-.tg-body {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  min-height: 0;
-  height: calc(100vh - 200px);
-}
-
-.tg-register-menu {
-  height: 40px;
-  flex-grow: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.tg-register-menu-button, .tg-register-menu-button-red, .tg-register-menu-button-inactive {
-  flex-grow: 0;
-  width: 7%;
-  height: 28px;
-  font-size: 1.1em;
-  color: white;
-  text-align: center;
-  padding-top: 7px;
-  border-radius: 10px;
-}
-
-.tg-register-menu-button {
-  background-color: navy;
-  cursor: pointer;
-}
-
-.tg-register-menu-button-inactive {
-  background-color: gray;
-  cursor: default;
-}
-
-.tg-register-menu-button-red {
-  background-color: red;
-  cursor: pointer;
-}
-
-.tg-register {
-  flex-grow: 1;
-  min-height: 0;
-}
-
-.tg-register-line-header {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: orange;
-  margin-bottom: 5px;
-}
-
-.tg-register-line:nth-child(even) {
-  background-color: white;  
-}
-
-.tg-register-line:nth-child(odd) {
-  background-color: #cccccc;  
-}
-
-.tg-register-line, .tg-register-line-selected {
-  display: flex;
-  flex-direction: row;
-}
-
-.tg-register-line-selected {
-  background-color: yellow;
-}
-
-.tg-register-highlight, .tg-register-highlight a {
-  background-color: yellow;
-}
-
-.tg-register-line-field {
-  flex-grow: 1;
-}
-
-.tg-register-line-click {
-  flex-grow: 0;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.tg-register-table-button {
-  font-size: 1.1em;
-  font-weight: bold;
-  margin-top: 10px;
-  height: 1.5em;
-  text-align: left;
-}
-
-.tg-preview-image-100 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 100px;
-  height: 100px;
-}
-
-.tg-preview-image-100 > img {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-.tg-preview-image-200 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 200px;
-  height: 200px;
-}
-
-.tg-preview-image-200 > img {
-  max-width: 200px;
-  max-height: 200px;
-}
-
-.tg-logging {
-  font-size: 0.8em;
 }
 
 /* ===================================== */

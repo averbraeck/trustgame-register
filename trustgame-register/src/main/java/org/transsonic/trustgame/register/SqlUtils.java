@@ -8,7 +8,9 @@ import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import org.transsonic.trustgame.data.trustgame.Tables;
+import org.transsonic.trustgame.data.trustgame.tables.records.GameRecord;
 import org.transsonic.trustgame.data.trustgame.tables.records.GameplayRecord;
+import org.transsonic.trustgame.data.trustgame.tables.records.MissionRecord;
 import org.transsonic.trustgame.data.trustgame.tables.records.UserRecord;
 
 public final class SqlUtils {
@@ -34,6 +36,16 @@ public final class SqlUtils {
     public static UserRecord readUserFromUserId(final RegisterData data, final Integer userId) {
         DSLContext dslContext = DSL.using(data.getDataSource(), SQLDialect.MYSQL);
         return dslContext.selectFrom(Tables.USER).where(Tables.USER.ID.eq(userId)).fetchAny();
+    }
+
+    public static MissionRecord readMissionFromGameId(final RegisterData data, final Integer gameId) {
+        DSLContext dslContext = DSL.using(data.getDataSource(), SQLDialect.MYSQL);
+        return dslContext.selectFrom(Tables.MISSION).where(Tables.MISSION.GAME_ID.eq(gameId)).fetchAny();
+    }
+
+    public static GameRecord readGameFromGameId(final RegisterData data, final Integer gameId) {
+        DSLContext dslContext = DSL.using(data.getDataSource(), SQLDialect.MYSQL);
+        return dslContext.selectFrom(Tables.GAME).where(Tables.GAME.ID.eq(gameId)).fetchAny();
     }
 
 }

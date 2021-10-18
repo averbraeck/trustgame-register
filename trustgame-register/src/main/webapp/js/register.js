@@ -1,47 +1,34 @@
-/* submit register form with selected game */
-function submitSelectGame() {
-  document.getElementById("clickType").setAttribute("value", "game");
-  document.getElementById("recordNr").setAttribute("value", document.getElementById("game").value);
+/* load the page with the right information (all passed in the request) */
+function initPage() {
+
+  /* logged in? */
+  var rn = String("${registerData}");
+  if (rn.length == 0 || rn == "null") {
+    window.location = "/trustgame-register/register";
+  }
+}
+
+/* start screen */
+function start() {
+  document.getElementById("clickType").setAttribute("value", "start");
+  document.getElementById("recordNr").setAttribute("value", 0);
   document.getElementById("registerForm").submit();
 }
 
 /* submit register form with selected gameplay */
-function submitSelectGamePlay() {
-  document.getElementById("clickType").setAttribute("value", "gamePlay");
+function submitSelectedGamePlay() {
+  document.getElementById("clickType").setAttribute("value", "selectedGamePlay");
   document.getElementById("recordNr").setAttribute("value", document.getElementById("gamePlay").value);
   document.getElementById("registerForm").submit();
 }
 
-/* submit register form with selected game user */
-function submitSelectGameUser(recordNr) {
-  document.getElementById("clickType").setAttribute("value", "gameUser");
+/* submit register form with password */
+function submitPassword(recordNr) {
+  document.getElementById("clickType").setAttribute("value", "password");
   document.getElementById("recordNr").setAttribute("value", recordNr);
   document.getElementById("registerForm").submit();
+  return true;
 }
-
-/* create the preview for the image when a file is selected */
-function previewImage(event, imageId) 
-{
-  var reader = new FileReader();
-  reader.onload = function()
-  {
-    var output = document.getElementById(imageId);
-    output.src = reader.result;
-  }
-  reader.readAsDataURL(event.target.files[0]);
-  var image_reset = document.getElementById(imageId + "_reset");
-  image_reset.value = 'normal';
-}
-
-function resetImage(imageId) 
-{
-  var image = document.getElementById(imageId);
-  image.src = '';
-  image.value = '';
-  var image_reset = document.getElementById(imageId + "_reset");
-  image_reset.value = 'delete';
-}
-
 
 /* Make the modal window div element draggable: */
 function dragElement(elmnt) {

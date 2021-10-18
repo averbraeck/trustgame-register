@@ -25,20 +25,20 @@
 
   </head>
 
-  <body>
+  <body onload="initPage()">
     <div class="tg-page">
       <div class="tg-header">
         <span class="tg-freightbooking">TransSonic FreightBooking Game</span>
-        <span class="tg-slogan">Game Self Registration</span>
+        <!--  span class="tg-slogan">Game Self Registration</span -->
       </div>
       <div class="tg-header-right">
         <img src="images/nwo.png" />
         <img src="images/tudelft.png" />
       </div>
 
-      <div class="tg-body">
+      <div class="tg-register-body">
       
-        <div class="tg-login-top-message">
+        <div class="tg-register-top-message">
           <h1>Registration for the FreightBooking Game</h1> 
         </div>
       
@@ -46,7 +46,7 @@
           ${registerData.getContentHtml()}
         </div>
         
-        <div class="tg-login-bottom-message">
+        <div class="tg-register-bottom-message">
           <p>This game is part of the research project Trans-SONIC 
             (<a href="https://transsonic.nl" target="_blank">https://transsonic.nl</a>) in which we 
             aim to explore the influence of trust on technology-mediated collaborations. 
@@ -69,11 +69,6 @@
     <!-- modal window for the client information within an order -->
     
     ${registerData.getModalWindowHtml()}
-
-    <form id="clickForm" action="/trustgame-register/register" method="POST" style="display:none;">
-      <input id="click" type="hidden" name="click" value="tobefilled" />
-      <input id="recordNr" type="hidden" name="recordNr" value="0" />
-    </form>
 
   </body>
 
