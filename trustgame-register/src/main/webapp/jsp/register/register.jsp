@@ -34,6 +34,7 @@
       <div class="tg-header-right">
         <img src="images/nwo.png" />
         <img src="images/tudelft.png" />
+        <span style="font-size: 12px; padding-left: 20px; position:relative; top:-4px; color:black;">v2.4.1</span>
       </div>
 
       <div class="tg-register-body">
