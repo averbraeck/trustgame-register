@@ -296,7 +296,8 @@ public class RegisterServlet extends HttpServlet {
                 content += gamePlay.getAutoregistertext() + "\n";
             else
                 content += "<p>Write it down as you will need it to log on</p>\n";
-            ModalWindowUtils.popup(data, "Registration successful", content, "start();");
+            ModalWindowUtils
+                    .popup(data, "Registration successful", content, "start();", gamePlay.getAutoregisterlink(), "start();");
         }
     }
 

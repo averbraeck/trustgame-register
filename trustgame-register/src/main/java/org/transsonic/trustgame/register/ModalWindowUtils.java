@@ -2,6 +2,17 @@ package org.transsonic.trustgame.register;
 
 public class ModalWindowUtils {
 
+    public static void popup(RegisterData data, String title, String message, String okMethod, String httpLink,
+            String closeMethod) {
+        // make popup
+        StringBuilder s = new StringBuilder();
+        s.append("<p>");
+        s.append(message);
+        s.append("</p>\n");
+        data.setModalWindowHtml(makeOkModalWindow(title, s.toString(), okMethod, httpLink, closeMethod));
+        data.setShowModalWindow(1);
+    }
+
     public static void popup(RegisterData data, String title, String message, String okMethod) {
         // make popup
         StringBuilder s = new StringBuilder();
@@ -42,10 +53,33 @@ public class ModalWindowUtils {
         s.append(htmlText);
         s.append("            </p>\n");
         s.append("          <div class=\"tg-modal-button-row\">\n");
-        s.append("            <div class=\"tg-button-small\" onclick=\"" + okMethod + "\">OK</div>\n");
+        if (okMethod.startsWith("http"))
+            s.append("            <div class=\"tg-button-small\" onclick=\"location.href='" + okMethod
+                    + "'\">OK</div>\n");
+        else
+            s.append("            <div class=\"tg-button-small\" onclick=\"" + okMethod + "\">OK</div>\n");
         s.append("          </div>\n");
         s.append("        </div>\n");
         return makeModalWindow(title, s.toString(), okMethod);
+    }
+
+    public static String makeOkModalWindow(String title, String htmlText, String okMethod, String httpLink,
+            String closeMethod) {
+        StringBuilder s = new StringBuilder();
+        s.append("        <div class=\"tg-modal-body\">");
+        s.append("          <div class=\"tg-modal-text\">\n");
+        s.append("            <p>\n");
+        s.append(htmlText);
+        s.append("            </p>\n");
+        s.append("          <div class=\"tg-modal-button-row\">\n");
+        if (httpLink != null && httpLink.length() > 0)
+            s.append("            <div class=\"tg-button-small\" onclick=\"location.href='" + httpLink
+                    + "'\">OK</div>\n");
+        else
+            s.append("            <div class=\"tg-button-small\" onclick=\"" + okMethod + "\">OK</div>\n");
+        s.append("          </div>\n");
+        s.append("        </div>\n");
+        return makeModalWindow(title, s.toString(), closeMethod);
     }
 
     public static String makeOkModalWindow(String title, String htmlText) {
