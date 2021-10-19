@@ -278,7 +278,7 @@ public class RegisterServlet extends HttpServlet {
             } catch (NoSuchAlgorithmException e1) {
                 throw new RuntimeException(e1);
             }
-            user.set(Tables.USER.PASSWORD, hashedPassword); // restore old password if not changed
+            user.set(Tables.USER.PASSWORD, hashedPassword);
             user.setAdministrator((byte) 0);
             user.setEmail("");
             String name = gamePlay.getUsernameprefix() + "_" + userCode;

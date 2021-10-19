@@ -423,4 +423,8 @@ html, body {
   font-size: 1em;
   font-style: normal;
 }
-  
+
+.tg-register-code {
+  font-size: 2em;
+  font-weight: bold;
+}
