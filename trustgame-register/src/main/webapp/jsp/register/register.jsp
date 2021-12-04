@@ -67,7 +67,7 @@
       
     </div> <!-- tg-page -->
     
-    <!-- modal window for the client information within an order -->
+    <!-- modal window for successful registration -->
     
     ${registerData.getModalWindowHtml()}
 

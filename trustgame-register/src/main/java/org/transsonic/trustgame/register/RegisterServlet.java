@@ -169,9 +169,16 @@ public class RegisterServlet extends HttpServlet {
         List<GameplayRecord> gamePlays = dslContext.selectFrom(Tables.GAMEPLAY)
                 .where(Tables.GAMEPLAY.AUTOREGISTER.eq(Byte.valueOf((byte) 1))).fetch();
 
+        LocalDateTime date = LocalDateTime.now();
+        for (int i = gamePlays.size() - 1; i >= 0; i--) {
+            if ((gamePlays.get(i).getStartplaydate() != null && date.isBefore(gamePlays.get(i).getStartplaydate())) || 
+                    (gamePlays.get(i).getEndplaydate() != null && date.isAfter(gamePlays.get(i).getEndplaydate())))
+                gamePlays.remove(i);
+        }
+
         if (gamePlays.size() == 0) {
             s.append("<div class=\"tg-select-table\">\n");
-            s.append("  <p><br>No games have self regstration turned on.</p><br><br>\n");
+            s.append("  <p><br>No games have self registration turned on.</p><br><br>\n");
             s.append("</div>\n");
         }
 
@@ -296,8 +303,8 @@ public class RegisterServlet extends HttpServlet {
                 content += gamePlay.getAutoregistertext() + "\n";
             else
                 content += "<p>Write it down as you will need it to log on</p>\n";
-            ModalWindowUtils
-                    .popup(data, "Registration successful", content, "start();", gamePlay.getAutoregisterlink(), "start();");
+            ModalWindowUtils.popup(data, "Registration successful", content, "start();", gamePlay.getAutoregisterlink(),
+                    "start();");
         }
     }
 
