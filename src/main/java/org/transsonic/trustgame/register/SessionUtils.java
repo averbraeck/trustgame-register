@@ -1,6 +1,6 @@
 package org.transsonic.trustgame.register;
 
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 
 public final class SessionUtils {
 
